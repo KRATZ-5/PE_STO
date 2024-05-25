@@ -4,70 +4,8 @@ import sqlite3                                                                  
 import hashlib                                                                                                          #Библиотека для хэширования данных
 import pytest
 
-
-def setup():
-    print("basic setup into module")
-
-
-def teardown():
-    print("basic teardown into module")
-
-
-def setup_module(module):
-    print("module setup")
-
-
-def teardown_module(module):
-    print("module teardown")
-
-
-def setup_function(function):
-    print("function setup")
-
-
-def teardown_function(function):
-    print("function teardown")
-
-
-def test_numbers_3_4():
-    print("test 3*4")
-    assert 3 * 4 == 12
-
-
-def test_strings_a_3():
-    print("test a*3")
-
-    assert 'a' * 3 == 'aaa'
-
-
-class TestUM:
-    def setup(self):
-        print("basic setup into class")
-
-    def teardown(self):
-        print("basic teardown into class")
-
-    def setup_class(cls):
-        print("class setup")
-
-    def teardown_class(cls):
-        print("class teardown")
-
-    def setup_method(self, method):
-        print("method setup")
-
-    def teardown_method(self, method):
-        print("method teardown")
-
-    def test_numbers_5_6(self):
-        print("test 5*6")
-        assert 5 * 6 == 30
-
-    def test_strings_b_2(self):
-        print("test b*2")
-        assert 'b' * 2 == 'bb'
-
-
+def test_passes():
+    assert 5 == 4
 
 
 
@@ -545,14 +483,15 @@ def admin_window():                                                             
     btn_save = Button(app, text="Сохранить изменения",font=("Arial Bold", 10),command=confirm_admin, width=20,background='green')# Создание кнопки закрытия приложения
     btn_save.grid(row=0+len(worker)+2, column=0, padx=5, pady=5)                                                        # Установка расположения кнопки
 
-
 global flag_debug                                                                                                       #Создание перенной флага для режима разработчика
 flag_debug=False                                                                                                        #Установка значения флагу
 app = Tk()                                                                                                              #Создание объекта класса tkinter
 app.title("СТО")                                                                                                        #Создание заголовка для графического интерфейса
 app.geometry('1600x800')                                                                                                #Установка размера окна графичекого интерфейса
 app.configure(background='#3eb489')                                                                                     #Установка цвета заднего фона графического интерфейса
-test_numbers_3_4()
 check_db('company.db')                                                                                                  #Подключение и создание бд в случае отсутсвия
+
+
+
 start()                                                                                                                 #Запуск основной программы
 app.mainloop()                                                                                                          #Завершение и вызов графического интерфеса tkinter
