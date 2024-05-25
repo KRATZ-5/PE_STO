@@ -4,8 +4,7 @@ from tkinter import ttk                                                         
 import sqlite3                                                                                                          #Библиотека для взаимодействия с базой данных
 import hashlib                                                                                                          #Библиотека для хэширования данных
 import pytest
-import matplotlib
-matplotlib.use('Agg')
+import os
 def test_passes():
     assert 4 == 4
 
@@ -488,6 +487,9 @@ def admin_window():                                                             
 
 global flag_debug                                                                                                       #Создание перенной флага для режима разработчика
 flag_debug=False                                                                                                        #Установка значения флагу
+if os.name != "nt" and os.getenv("GITHUB_ACTIONS"):
+    os.system('Xvfb :1 -screen 0 1600x1200x16  &')
+    os.environ["DISPLAY"] = ":1.0"
 app = Tk()                                                                                                              #Создание объекта класса tkinter
 app.title("СТО")                                                                                                        #Создание заголовка для графического интерфейса
 app.geometry('1600x800')                                                                                                #Установка размера окна графичекого интерфейса
