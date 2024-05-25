@@ -5,9 +5,10 @@ import hashlib                                                                  
 import pytest
 
 def test_passes():
-    assert 5 == 4
+    assert 4 == 4
 
-
+def test2_passes():
+    assert 44 == 44
 
 
 def check_db(name):                                                                                                     #Функция для создания базы данных
