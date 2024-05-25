@@ -1,9 +1,11 @@
+import tkinter
 from tkinter import *                                                                                                   #Библиотека для отрисовки графического интерфейса
 from tkinter import ttk                                                                                                 #Библиотека для отрисовки графического интерфейса
 import sqlite3                                                                                                          #Библиотека для взаимодействия с базой данных
 import hashlib                                                                                                          #Библиотека для хэширования данных
 import pytest
-
+import matplotlib
+matplotlib.use('Agg')
 def test_passes():
     assert 4 == 4
 
